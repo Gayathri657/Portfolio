@@ -1,0 +1,186 @@
+/* =========================
+   Crochet Gallery — Stable UI
+   Works same on Mac/Windows/Phones
+========================= */
+
+:root{
+  --bg:#0b0b10;
+  --panel:#12121a;
+  --border: rgba(255,255,255,.10);
+  --text:#f2f2f4;
+  --muted: rgba(242,242,244,.72);
+  --radius: 16px;
+
+  /* consistent typography */
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+}
+
+*{ box-sizing:border-box; }
+html{
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body{
+  margin:0;
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ---------- Topbar ---------- */
+.topbar{
+  max-width:1100px;
+  margin: 0 auto;
+  padding: 22px 18px 10px;
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+.topbar h1{ margin:0 0 6px; font-size:1.55rem; }
+.topbar p{ margin:0; color:var(--muted); }
+
+.back{
+  color: var(--muted);
+  text-decoration:none;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  padding: 10px 12px;
+  border-radius: 12px;
+  white-space:nowrap;
+  flex: 0 0 auto;
+}
+.back:hover{ color:var(--text); background: rgba(255,255,255,.06); }
+
+/* Mobile topbar */
+@media (max-width: 640px){
+  .topbar{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .back{ width: fit-content; }
+}
+
+/* ---------- Layout ---------- */
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding: 14px 18px 40px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  align-items: start; /* prevents weird vertical alignment */
+}
+
+/* Make 2 columns on most phones, 1 column on tiny phones */
+@media (max-width: 520px){
+  .cards{ grid-template-columns: 1fr; }
+}
+
+/* ---------- Card base ---------- */
+.card{
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  border-radius: var(--radius);
+  overflow:hidden;
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+.card:hover{
+  transform: translateY(-3px);
+  background: rgba(255,255,255,.05);
+  border-color: rgba(255,255,255,.16);
+}
+
+/* ---------- Flip container ---------- */
+.flip{ perspective: 1200px; }
+
+/* IMPORTANT:
+   Use aspect-ratio instead of fixed height so it scales consistently */
+.card__inner{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;           /* stable size everywhere */
+  min-height: 300px;             /* safety */
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
+}
+
+.flip.active .card__inner{ transform: rotateY(180deg); }
+
+.card__front,
+.card__back{
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* ---------- FRONT ---------- */
+/* Front layout: image + text */
+.card__front{
+  display:flex;
+  flex-direction: column;
+}
+
+/* Image area */
+.thumb{
+  aspect-ratio: 4 / 3;
+  background:#0d0d14;
+  overflow:hidden;
+}
+.thumb img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+  transform: scale(1.02);
+  transition: transform 220ms ease;
+}
+.card:hover .thumb img{ transform: scale(1.06); }
+
+/* Text area */
+.meta{
+  padding: 12px 12px 14px;
+}
+.meta h3{
+  margin:0 0 6px;
+  font-size:1.02rem;
+  font-weight:700;
+  line-height: 1.2;
+}
+.meta p{
+  margin:0;
+  color:var(--muted);
+  font-size:.92rem;
+  line-height:1.35;
+}
+
+/* ---------- BACK ---------- */
+.card__back{
+  transform: rotateY(180deg);
+  background: #000;
+  display: grid;
+  place-items: center;
+  padding: 12px; /* gives breathing room */
+}
+
+/* Full image visible, never cropped */
+.card__back img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: #000;
+  border-radius: 12px; /* softer inside */
+}
+
+/* Reduce motion for people who prefer it */
+@media (prefers-reduced-motion: reduce){
+  .card, .card__inner, .thumb img{ transition: none !important; }
+}

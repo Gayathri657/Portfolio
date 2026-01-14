@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Gayathri Pamarthi — Book-style portfolio (academic dossier)."
+    />
+    <title>Gayathri Pamarthi — Portfolio Book</title>
+    <link rel="icon" href="assets/favicon.png" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <!-- Top reading progress -->
+    <div class="progress" aria-hidden="true">
+      <div class="progress__bar" id="progressBar"></div>
+    </div>
+
+    <div class="shell">
+      <!-- LEFT: Table of contents -->
+      <aside class="toc" id="toc" aria-label="Table of contents">
+        <div class="toc__header">
+          <div class="badge">Portfolio Book</div>
+          <h1 class="toc__title">Gayathri Pamarthi</h1>
+          <p class="toc__subtitle">
+            Backend Java Developer • MySQL Practitioner • Cloud & System
+            Engineer
+          </p>
+
+          <div class="toc__actions">
+            <button
+              class="btn btn--ghost"
+              id="themeBtn"
+              type="button"
+              aria-label="Toggle theme"
+            >
+              Toggle theme
+            </button>
+            <a class="btn" href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <nav class="toc__nav">
+          <a class="toc__link" href="#cover" data-page="01">Cover</a>
+          <a class="toc__link" href="#about" data-page="02">About</a>
+          <a class="toc__link" href="#education" data-page="03">Education</a>
+          <a class="toc__link" href="#highlights" data-page="04">Highlights</a>
+          <a class="toc__link" href="#experience" data-page="05">Experience</a>
+          <a class="toc__link" href="#projects" data-page="06">Projects</a>
+          <a class="toc__link" href="#skills" data-page="07">Skills</a>
+          <a class="toc__link" href="#writing" data-page="08"
+            >Writing & Communication</a
+          >
+          <a class="toc__link" href="#contact" data-page="09">Contact</a>
+        </nav>
+
+        <div class="toc__footer">
+          <div class="mini">
+            <div class="mini__label">Quick links</div>
+            <div class="mini__links">
+              <a
+                href="https://www.linkedin.com/in/gayathri-p-140589311/"
+                target="_blank"
+                rel="noreferrer"
+                >LinkedIn</a
+              >
+              <a
+                href="https://github.com/Gayathri657"
+                target="_blank"
+                rel="noreferrer"
+                >GitHub</a
+              >
+              <a
+                href="https://leetcode.com/u/Gayi115/"
+                target="_blank"
+                rel="noreferrer"
+                >LeetCode</a
+              >
+            </div>
+          </div>
+          <div class="mini__hint">
+            Tip: press <kbd>J</kbd>/<kbd>K</kbd> to jump chapters
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT: Pages -->
+      <main class="book" id="book">
+        <!-- COVER -->
+        <section class="page" id="cover" data-page="01" aria-label="Cover page">
+  <header class="page__header">
+    <div class="page__meta">
+      <span class="page__num">01</span>
+      <span class="page__chapter">Cover</span>
+    </div>
+    <div class="page__rule"></div>
+  </header>
+
+  <div class="cover">
+    <!-- LEFT COLUMN -->
+    <div class="cover__left">
+      <div class="stamp">Academic • Professional • Projects</div>
+
+      <h2 class="cover__title">
+        A record of what I’ve built and learned.
+      </h2>
+
+      <p class="cover__lead">
+        I’m Gayathri, a systems and backend engineer focused on Linux,
+        Java, and data. I learn by building — running experiments,
+        writing code, and documenting what I discover. This portfolio is
+        a record of my real projects, notes, and technical work.
+      </p>
+
+      <div class="cover__cards">
+        <div class="card">
+          <div class="card__k">Currently</div>
+          <div class="card__v">Debug Technician @ Jabil</div>
+        </div>
+
+        <div class="card">
+          <div class="card__k">Past</div>
+          <div class="card__v">
+            Associate Software Engineer @ Accenture
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__k">Focus</div>
+          <div class="card__v">
+            Java • SQL • Linux • Cloud fundamentals
+          </div>
+        </div>
+      </div>
+
+      <div class="cover__cta">
+        <a class="btn" href="#about">Open the book →</a>
+        <a class="btn btn--ghost" href="#about">Read intro</a>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="cover__right">
+      <figure class="portrait">
+        <img
+          src="assets/profile.jpg"
+          alt="Portrait of Gayathri"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+        />
+
+        <div class="portrait__fallback">
+          <div class="portrait__monogram">GP</div>
+          <div class="portrait__hint">
+            Backend • Linux • Cloud
+          </div>
+        </div>
+      </figure>
+
+      <div class="codeblock" role="note" aria-label="Developer identity block">
+<pre><code>const developer = {
+  name: "Gayathri Pamarthi",
+  skills: ["Java", "SQL", "Linux", "Git", "Networking"],
+  hardWorker: true,
+  quickLearner: true,
+  creative: true,
+  problemSolver: true
+};</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        <!-- ABOUT -->
+        <section class="page" id="about" data-page="02" aria-label="About page">
+          <header class="page__header">
+            <div class="page__meta">
+              <span class="page__num">02</span>
+              <span class="page__chapter">About</span>
+            </div>
+            <div class="page__rule"></div>
+          </header>
+
+          <h2>About</h2>
+
+          <p class="lede">
+            I’m Gayathri, a backend Java developer with a strong foundation in
+            Linux and systems. I focus on building reliable backend services,
+            working with data, and understanding how applications behave in real
+            environments.
+          </p>
+
+          <p>
+            My experience includes backend development, production
+            troubleshooting, and working with virtualized and networked systems.
+            I have built and studied applications involving Java, SQL, Linux,
+            IoT-based monitoring, and virtual machines, which has helped me
+            understand how software behaves beyond just the code.
+          </p>
+
+          <div class="two-col">
+            <div>
+              <h3>What you’ll find here</h3>
+              <ul class="bullets">
+                <li>
+                  <strong>Backend projects</strong> built with Java, Spring
+                  Boot, and SQL
+                </li>
+                <li>
+                  <strong>Linux & system notes</strong> from real
+                  troubleshooting and labs
+                </li>
+                <li>
+                  <strong>Clear documentation</strong> that explains how things
+                  work
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>What I’m focused on now</h3>
+              <ul class="bullets">
+                <li>Building REST APIs with Java and Spring Boot</li>
+                <li>Working with MySQL and data pipelines</li>
+                <li>Strengthening Linux and cloud fundamentals</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!--Education-->
+        <section class="page" id="education" data-page="03">
+          <header class="page__header">
+            <div class="page__meta">
+              <span class="page__num">03</span>
+              <span class="page__chapter">Education</span>
+            </div>
+            <div class="page__rule"></div>
+          </header>
+
+          <h2>Education</h2>
+
+          <div class="edu">
+            <h3>Master of Science in Information Technology</h3>
+            <p class="muted">University of Cincinnati — United States</p>
+            <p>
+              Focus: Systems, Databases, Software Engineering, Cloud
+              fundamentals, Virtual Machines, CyberSecurity,
+            </p>
+
+            <h3>
+              Bachelor of Technology in Electronics & Communication Engineering
+            </h3>
+            <p class="muted">VFSTR, India</p>
+            <p>Focus: Computing systems, electronics, networking basics</p>
+          </div>
+        </section>
+
+        <!-- HIGHLIGHTS -->
+        <section
+          class="page"
+          id="highlights"
+          data-page="04"
+          aria-label="Highlights page"
+        >
+          <header class="page__header">
+            <div class="page__meta">
+              <span class="page__num">04</span>
+              <span class="page__chapter">Highlights</span>
+            </div>
+            <div class="page__rule"></div>
+          </header>
+
+          <h2>Highlights</h2>
+
+          <div class="grid3">
+            <article class="panel">
+              <h3>Backend-first mindset</h3>
+              <p>
+                I focus on building reliable backend systems — working with
+                Java, databases, APIs, and the infrastructure they run on.
+              </p>
+              <div class="tagrow">
+                <span class="tag">Java</span>
+                <span class="tag">Spring Boot</span>
+                <span class="tag">SQL</span>
+              </div>
+            </article>
+
+            <article class="panel">
+              <h3>Systems & Linux experience</h3>
+              <p>
+                Comfortable working with Linux, logs, ports, networks, and
+                virtual machines while debugging and supporting real systems.
+              </p>
+              <div class="tagrow">
+                <span class="tag">Linux</span>
+                <span class="tag">Networking</span>
+                <span class="tag">Virtualization</span>
+              </div>
+            </article>
+
+            <article class="panel">
+              <h3>Real-world problem solving</h3>
+              <p>
+                I enjoy breaking down issues, validating fixes, and documenting
+                what I learn — whether in production, labs, or backend projects.
+              </p>
+              <div class="tagrow">
+                <span class="tag">Debugging</span>
+                <span class="tag">DSA</span>
+                <span class="tag">Documentation</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section
+          class="page"
+          id="experience"
+          data-page="05"
+          aria-label="Experience page"
+        >
+          <header class="page__header">
+            <div class="page__meta">
+              <span class="page__num">05</span>
+              <span class="page__chapter">Experience</span>
+            </div>
+            <div class="page__rule"></div>
+          </header>
+
+          <h2>Experience</h2>
+
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-when">Current</div>
+              <div class="tl-body">
+                <h3>Debug Technician — Jabil</h3>
+                <p class="muted">Production systems & device troubleshooting</p>
+                <ul class="bullets">
+                  <li>
+                    Troubleshoot hardware and software issues in a Linux-based
+                    production environment
+                  </li>
+                  <li>
+                    Analyze system logs, device output, and networked components
+                    to identify root causes
+                  </li>
+                  <li>
+                    Validate fixes, firmware updates, and configuration changes
+                    before release
+                  </li>
+                  <li>
+                    Document issues and resolutions to support engineering and
+                    quality teams
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-when">Aug 24-Dec 24</div>
+              <div class="tl-body">
+                <h3>Backend & Data Support Assistant (Student Role) - UC</h3>
+                <p class="muted">Worked with student data and real-world datasets using SQL</p>
+                <ul class="bullets">
+                  <li>
+                   Worked with student academic data, querying and analyzing datasets using 
+                   MySQL and Excel to generate reports used by faculty for academic planning
+                  </li>
+                  <li>
+                    Supported and maintained technology-enabled learning systems 
+                    by troubleshooting access, configuration, and data-related issues
+                  </li>
+                  <li>
+                     Collaborated on a project with an NGO to support 
+                     their inventory management system, assisting with data organization, updates, and reporting
+                  </li>
+                  <li>
+                    Maintained and updated digital learning resources to improve accuracy and accessibility
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="tl-item">
+              <div class="tl-when">Dec 22-Aug 23</div>
+              <div class="tl-body">
+                <h3>Associate Software Engineer — Accenture</h3>
+                <p class="muted">
+                  Enterprise backend applications & production support
+                </p>
+                <ul class="bullets">
+                  <li>
+                    Supported Java-based backend applications and investigated
+                    defects and data issues
+                  </li>
+                  <li>
+                    Debugged application behavior and validated fixes using SQL
+                    and logs
+                  </li>
+                  <li>
+                    Worked within Agile and SDLC workflows using JIRA for issue
+                    tracking and releases
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section
+          class="page"
+          id="projects"
+          data-page="07"
+          aria-label="Projects page"
+        >
+          <header class="page__header">
+            <div class="page__meta">
+              <span class="page__num">06</span>
+              <span class="page__chapter">Projects</span>
+            </div>
+            <div class="page__rule"></div>
+          </header>
+
+          <h2>Projects</h2>
+          <p class="lede">
+            Selected projects that show how I design, build, and troubleshoot
+            backend and system-level software. Each project includes real
+            commands, data, and documentation.
+          </p>
+
+          <div class="projects">
+            <!-- Backend -->
+            <article class="proj">
+              <div class="proj__top">
+                <h3>Spring Boot Backend Services</h3>
+                <div class="proj__links">
+                  <a class="text-link"
+                    href="https://github.com/Gayathri657/MyNewRepo"
+                    target="_blank"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+              <p class="muted">
+                Built REST APIs using Java and Spring Boot to handle data
+                processing, validation, and persistence.
+              </p>
+              <ul class="bullets">
+                <li>
+                  Layered architecture: controllers, services, repositories
+                </li>
+                <li>Used JPA/Hibernate with MySQL for data storage</li>
+                <li>Validated API responses using Postman</li>
+              </ul>
+              <div class="tagrow">
+                <span class="tag">Java</span>
+                <span class="tag">Spring Boot</span>
+                <span class="tag">MySQL</span>
+              </div>
+            </article>
+
+            <!-- Linux Data Pipeline -->
+            <article class="proj">
+              <div class="proj__top">
+                <h3>Linux Weather Data Pipeline</h3>
+                <div class="proj__links">
+                  <a class="text-link" href="https://github.com/Gayathri657" target="_blank"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+              <p class="muted">
+                Built an automated data pipeline to download, move, load, and
+                validate weather data using Linux and SQL.
+              </p>
+              <ul class="bullets">
+                <li>Cron-based scheduling and Bash scripts</li>
+                <li>Loaded CSV data into MySQL and validated records</li>
+                <li>Generated reports for missing or incorrect data</li>
+              </ul>
+              <div class="tagrow">
+                <span class="tag">Linux</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Automation</span>
+              </div>
+            </article>
+
+            <!-- Security -->
+            <article class="proj">
+              <div class="proj__top">
+                <h3>Linux Security & Network Labs</h3>
+                <div class="proj__links">
+                  <a class="text-link"
+                    href="https://github.com/Gayathri657/NFS-Exploitation-SSH-Key-Injection-Metasploitable"
+                    target="_blank"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+              <p class="muted">
+                Built and attacked vulnerable Linux machines to understand
+                network security and access control.
+              </p>
+              <ul class="bullets">
+                <li>Used Nmap to scan ports and discover exposed services</li>
+                <li>
+                  Mounted NFS shares and injected SSH keys for remote access
+                </li>
+                <li>
+                  Performed password cracking and privilege escalation on
+                  Metasploitable
+                </li>
+              </ul>
+              <div class="tagrow">
+                <span class="tag">Linux</span>
+                <span class="tag">Networking</span>
+                <span class="tag">Security</span>
+              </div>
+            </article>
+            <!--HCI-->
+            <article class="proj">
+              <div class="proj__top">
+                <h3>Human-Computer Interaction & Usability Project</h3>
+                <div class="proj__links">
+                  <a class="text-link"
+                    href="https://github.com/Gayathri657/Human-Computer-Interaction-and-Usability-Project"
+                    target="_blank"
+                    rel="noreferrer"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+              <p class="muted">
+                Explored usability principles and designed interactive
+                experiences focused on enhancing user interactions with software
+                interfaces.
+              </p>
+              <ul class="bullets">
+                <li>Conducted user research and usability testing</li>
+                <li>
+                  Identified pain points and iterated on interface designs
+                </li>
+                <li>
+                  Documented findings with visual reports and actionable
+                  recommendations
+                </li>
+              </ul>
+              <div class="tagrow">
+                <span class="tag">UX</span>
+                <span class="tag">Usability</span>
+                <span class="tag">Design Thinking</span>
+              </div>
+            </article>
+
+            <!-- Java DSA -->
+            <article class="proj">
+              <div class="proj__top">
+                <h3>Java Problem Solving (LeetCode)</h3>
+                <div class="proj__links">
+                  <a class="text-link" href="https://leetcode.com/u/Gayi115/" target="_blank"
+                    >LeetCode</a
+                  >
+                </div>
+              </div>
+              <p class="muted">
+                Regular practice with data structures and algorithms to
+                strengthen core Java and logic.
+              </p>
+              <ul class="bullets">
+                <li>Arrays, strings, hash maps, recursion, math</li>
+                <li>Focus on writing clear, explainable solutions</li>
+              </ul>
+              <div class="tagrow">
+                <span class="tag">Java</span>
+                <span class="tag">DSA</span>
+                <span class="tag">Problem Solving</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="callout">
+            <div class="callout__title">Proof of work</div>
+            <div class="callout__body">
+              Each project includes README files, commands, screenshots, and
+              outputs in GitHub to show how it was built and tested.
+            </div>
+          </div>
+        </section>
+
+        <!-- SKILLS -->
+        <!-- SKILLS -->
+        <section
+          class="page"
+          id="skills"
+          data-page="07"
+          aria-label="Skills page"
+        >
+          <header class="page__header">
+            <div class="page__meta">
+              <span class="page__num">07</span>
+              <span class="page__chapter">Skills</span>
+            </div>
+            <div class="page__rule"></div>
+          </header>
+
+          <h2>Skills</h2>
+
+          <div class="skills">
+            <div class="skill">
+              <h3>Backend & Application Development</h3>
+              <div class="chips">
+                <span class="chip">Java</span>
+                <span class="chip">Spring Boot</span>
+                <span class="chip">Spring MVC</span>
+                <span class="chip">Hibernate (JPA)</span>
+                <span class="chip">REST APIs</span>
+                <span class="chip">JUnit</span>
+                <span class="chip">Maven</span>
+                <span class="chip">Gradle</span>
+              </div>
+            </div>
+
+            <div class="skill">
+              <h3>Databases & Data</h3>
+              <div class="chips">
+                <span class="chip">MySQL</span>
+                <span class="chip">SQL</span>
+                <span class="chip">MongoDB</span>
+                <span class="chip">Data Modeling</span>
+                <span class="chip">ETL Basics</span>
+              </div>
+            </div>
+
+            <div class="skill">
+              <h3>Systems & Linux</h3>
+              <div class="chips">
+                <span class="chip">Linux</span>
+                <span class="chip">Bash</span>
+                <span class="chip">SSH</span>
+                <span class="chip">NFS</span>
+                <span class="chip">Process & Log Analysis</span>
+                <span class="chip">Networking Fundamentals</span>
+              </div>
+            </div>
+
+            <div class="skill">
+              <h3>Cloud & DevOps</h3>
+              <div class="chips">
+                <span class="chip">AWS (Cloud Platforms)</span>
+                <span class="chip">Docker</span>
+                <span class="chip">Jenkins</span>
+                <span class="chip">CI/CD</span>
+                <span class="chip">Virtual Machines</span>
+              </div>
+            </div>
+
+            <div class="skill">
+              <h3>Security & Testing</h3>
+              <div class="chips">
+                <span class="chip">Nmap</span>
+                <span class="chip">Kali Linux</span>
+                <span class="chip">Metasploitable</span>
+                <span class="chip">Postman</span>
+                <span class="chip">API Testing</span>
+              </div>
+            </div>
+
+            <div class="skill">
+              <h3>Tools & Workflow</h3>
+              <div class="chips">
+                <span class="chip">Version Control (Git)</span>
+                <span class="chip">GitHub</span>
+                <span class="chip">JIRA</span>
+                <span class="chip">Agile / SDLC</span>
+                <span class="chip">Technical Documentation</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- WRITING & COMMUNICATION -->
+        <section
+          class="page"
+          id="writing"
+          data-page="10"
+          aria-label="Writing and communication page"
+        >
+          <header class="page__header">
+            <div class="page__meta">
+              <span class="page__num">08</span>
+              <span class="page__chapter">Writing & Communication</span>
+            </div>
+            <div class="page__rule"></div>
+          </header>
+
+          <h2>Writing & Communication</h2>
+
+          <p class="lede">
+            Alongside engineering, I value clear thinking, research, and
+            communication. This section brings together my academic
+            publications, technical writing, and personal storytelling.
+          </p>
+
+          <div class="notes">
+            <!-- Springer Publication -->
+            <article class="note">
+              <h3>Research Publication — Springer</h3>
+              <p class="muted">
+                Co-author of a peer-reviewed research paper published in
+                Springer Conference Proceedings (2023) on computing systems and
+                low-power digital design.
+              </p>
+              <a
+                class="note__link"
+                href="https://doi.org/10.1007/978-981-19-4304-1_7"
+                target="_blank"
+              >
+                View Springer publication →
+              </a>
+            </article>
+
+            <!-- Academic Papers -->
+            <article class="note">
+              <h3>Academic & Technical Writing</h3>
+              <p class="muted">
+                Authored four research-style technical papers during my Master’s
+                program, focusing on computing systems, usability, performance,
+                and applied software engineering. Each paper is documented and
+                version-controlled on GitHub.
+              </p>
+
+              <ul class="bullets">
+                <li>
+                  <a class="text-link"
+                    href="https://github.com/Gayathri657/Systematic-Literature-Review-Research-Paper-1"
+                    target="_blank"
+                  >
+                    Systematic Literature Review — Computing Systems &
+                    Applications
+                  </a>
+                </li>
+                <li>
+                  <a class="text-link"
+                    href="https://github.com/Gayathri657/Expert-Reviews-Research-Paper-2"
+                    target="_blank"
+                  >
+                    Expert Review Study — Technology Evaluation & Design
+                    Insights
+                  </a>
+                </li>
+                <li>
+                  <a class="text-link"
+                    href="https://github.com/Gayathri657/Survey-Research-Paper-3"
+                    target="_blank"
+                  >
+                    Survey Research — User Experience & System Usability
+                  </a>
+                </li>
+                <li>
+                  <a class="text-link"
+                    href="https://github.com/Gayathri657/Experiment-Research-Paper-4"
+                    target="_blank"
+                  >
+                    Experimental Study — Performance & System Behavior
+                  </a>
+                </li>
+              </ul>
+
+              <a
+                class="note__link"
+                href="https://github.com/Gayathri657"
+                target="_blank"
+              >
+                View all research repositories →
+              </a>
+            </article>
+
+            <!-- Blog -->
+            <article class="note">
+              <h3>Personal Writing (Medium)</h3>
+              <p class="muted">
+                I write short reflective stories inspired by my childhood, life
+                experiences, and personal growth. This helps me stay grounded
+                and communicate with clarity and empathy.
+              </p>
+              <a
+                class="note__link"
+                href="https://medium.com/@gayathripamarthi657"
+                target="_blank"
+              >
+                Read my stories on Medium →
+              </a>
+            </article>
+
+            <!-- LinkedIn -->
+            <article class="note">
+              <h3>Professional Writing</h3>
+              <p class="muted">
+                I share technical learnings, project updates, and professional
+                reflections on LinkedIn.
+              </p>
+              <a
+                class="note__link"
+                href="https://www.linkedin.com/in/gayathri-p-140589311/"
+                target="_blank"
+              >
+                View LinkedIn posts →
+              </a>
+            </article>
+
+            <!-- Beyond Tech -->
+            <article class="note">
+              <h3>Beyond Technology</h3>
+              <p class="muted">
+                Outside engineering, I stay balanced through creativity,
+                reading, and community involvement.
+              </p>
+              <ul class="bullets">
+                <li><a class="text-link" href="crochet.html">Crochet — detail-oriented creative work</a></li>
+                <li>Reading — books on growth, storytelling, and technology</li>
+                <li>
+                  Tech meetups — actively participating in local developer and
+                  cloud communities
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section
+          class="page"
+          id="contact"
+          data-page="09"
+          aria-label="Contact page"
+        >
+          <header class="page__header">
+            <div class="page__meta">
+              <span class="page__num">09</span>
+              <span class="page__chapter">Contact</span>
+            </div>
+            <div class="page__rule"></div>
+          </header>
+
+          <h2>Contact</h2>
+          <p class="lede">
+            If you’re hiring, mentoring, or interested in collaborating, I’d be
+            glad to connect.
+          </p>
+
+          <div class="contact">
+            <div class="contact__grid">
+              <div class="panel">
+                <h3>Direct</h3>
+                <ul class="bullets">
+                  <li>
+                    Email:
+                    <a href="mailto:pamatgi@mail.uc.edu"
+                      >pamartgi@mail.uc.edu</a
+                    >
+                  </li>
+                  <li>Location: United States</li>
+                </ul>
+              </div>
+
+              <div class="panel">
+                <h3>Online</h3>
+                <ul class="bullets">
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/gayathri-p-140589311/"
+                      target="_blank"
+                      >LinkedIn</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://github.com/Gayathri657" target="_blank"
+                      >GitHub</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://leetcode.com/u/Gayi115/" target="_blank"
+                      >LeetCode</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <form class="form" id="contactForm">
+              <div class="form__row">
+                <label>
+                  Name
+                  <input name="name" required placeholder="Gayathri Pamarthi" />
+                </label>
+                <label>
+                  Email
+                  <input
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="pamartgi@mail.uc.edu"
+                  />
+                </label>
+              </div>
+              <label>
+                Message
+                <textarea
+                  name="message"
+                  rows="5"
+                  required
+                  placeholder="Tell me about your opportunity…"
+                ></textarea>
+              </label>
+              <div class="form__actions">
+                <button class="btn" type="submit">
+                  Copy message to clipboard
+                </button>
+                <p class="muted small" id="formHint">
+                  This site is static — your message will be copied so you can
+                  paste it into email or LinkedIn.
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <footer class="footer">
+            <div>© <span id="year"></span> Gayathri Pamarthi</div>
+            <div class="muted">Designed as a portfolio in book form.</div>
+          </footer>
+        </section>
+      </main>
+    </div>
+
+    <script src="assets/script.js"></script>
+
+</body>
+
+  </body>
+</html>
