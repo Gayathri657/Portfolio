@@ -1,6 +1,5 @@
 /* =========================
    Crochet Gallery — Stable UI
-   Works same on Mac/Windows/Phones
 ========================= */
 
 :root{
@@ -57,28 +56,11 @@ body{
   padding:10px 12px;
   border-radius:12px;
   white-space:nowrap;
-  flex:0 0 auto;
 }
 
 .back:hover{
   color:var(--text);
   background:rgba(255,255,255,.06);
-}
-
-/* Mobile topbar */
-
-@media (max-width:640px){
-
-  .topbar{
-    flex-direction:column;
-    align-items:stretch;
-    gap:10px;
-  }
-
-  .back{
-    width:fit-content;
-  }
-
 }
 
 /* ---------- Layout ---------- */
@@ -102,7 +84,7 @@ body{
   }
 }
 
-/* ---------- Card base ---------- */
+/* ---------- Card ---------- */
 
 .card{
   border:1px solid var(--border);
@@ -110,7 +92,7 @@ body{
   border-radius:var(--radius);
   overflow:hidden;
   cursor:pointer;
-  transition:transform 160ms ease, background 160ms ease, border-color 160ms ease;
+  transition:transform .15s ease, background .15s ease, border-color .15s ease;
 }
 
 .card:hover{
@@ -125,13 +107,9 @@ body{
   perspective:1200px;
 }
 
-/* FIXED CARD HEIGHT (less empty space) */
-
 .card__inner{
   position:relative;
   width:100%;
-  aspect-ratio:4 / 5;
-  min-height:240px;
   transform-style:preserve-3d;
   transition:transform .7s cubic-bezier(.4,.2,.2,1);
 }
@@ -142,8 +120,6 @@ body{
 
 .card__front,
 .card__back{
-  position:absolute;
-  inset:0;
   backface-visibility:hidden;
   border-radius:var(--radius);
   overflow:hidden;
@@ -152,14 +128,13 @@ body{
 /* ---------- FRONT ---------- */
 
 .card__front{
-  display:flex;
-  flex-direction:column;
+  display:block;
 }
 
-/* Image area */
+/* Image */
 
 .thumb{
-  aspect-ratio:4 / 3;
+  aspect-ratio:4/3;
   background:#0d0d14;
   overflow:hidden;
 }
@@ -169,15 +144,14 @@ body{
   height:100%;
   object-fit:cover;
   display:block;
-  transform:scale(1.02);
-  transition:transform 220ms ease;
+  transition:transform .25s ease;
 }
 
 .card:hover .thumb img{
-  transform:scale(1.06);
+  transform:scale(1.05);
 }
 
-/* Text area */
+/* Text */
 
 .meta{
   padding:10px 12px 12px;
@@ -187,19 +161,19 @@ body{
   margin:0 0 4px;
   font-size:1.02rem;
   font-weight:700;
-  line-height:1.2;
 }
 
 .meta p{
   margin:0;
   color:var(--muted);
   font-size:.92rem;
-  line-height:1.35;
 }
 
 /* ---------- BACK ---------- */
 
 .card__back{
+  position:absolute;
+  inset:0;
   transform:rotateY(180deg);
   background:#000;
   display:grid;
@@ -211,13 +185,11 @@ body{
   width:100%;
   height:100%;
   object-fit:contain;
-  object-position:center;
-  display:block;
   background:#000;
   border-radius:12px;
 }
 
-/* Reduce motion */
+/* ---------- Reduce motion ---------- */
 
 @media (prefers-reduced-motion:reduce){
 
